@@ -14,7 +14,7 @@
 @property(nonatomic,strong)UIBezierPath *shapepath;
 @property(nonatomic,strong)CAShapeLayer *progresslayer;
 @property(nonatomic,strong)UIBezierPath *progresspath;
-
+@property(nonatomic,strong)UILabel *lab;
 @end
 @implementation ZSShanpeLayer
 
@@ -33,8 +33,11 @@
         
         //默认线宽5
         self.progresswidth = 5;
+        UILabel *lab = [[UILabel alloc]initWithFrame:self.bounds];
+        self.lab = lab;
     }
     return self;
+    
 }
 
 
@@ -48,7 +51,7 @@
 }
 
 -(void)createShanpe{
-//    _shapepath = [UIBezierPath bezierPathWithArcCenter:self.center radius:(self.bounds.size.width - _progresswidth) * 0.5 startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+    //    _shapepath = [UIBezierPath bezierPathWithArcCenter:self.center radius:(self.bounds.size.width - _progresswidth) * 0.5 startAngle:0 endAngle:M_PI * 2 clockwise:YES];
     _shapepath = [UIBezierPath bezierPathWithOvalInRect:self.bounds];
     _shapelayer.strokeStart = 0.0f;
     _shapelayer.strokeEnd = 1.0f;
@@ -56,7 +59,7 @@
 }
 
 -(void)createProgress{
-//    _progresspath = [UIBezierPath bezierPathWithArcCenter:self.center radius:(self.bounds.size.width - _progresswidth) * 0.5 startAngle:- M_PI_2 endAngle:(M_PI * 2) * _progress - M_PI_2 clockwise:YES];
+    //    _progresspath = [UIBezierPath bezierPathWithArcCenter:self.center radius:(self.bounds.size.width - _progresswidth) * 0.5 startAngle:- M_PI_2 endAngle:(M_PI * 2) * _progress - M_PI_2 clockwise:YES];
     _progresspath = [UIBezierPath bezierPathWithOvalInRect:self.bounds];
     _progresslayer.strokeStart = 0.0f;
     _progresslayer.strokeEnd = _progress;
@@ -92,13 +95,26 @@
     [_progresslayer addAnimation:anim forKey:@"strokeEndAnimation"];
 }
 
+-(void)setText:(NSString *)text{
+    _text = text;
+    _lab.transform = CGAffineTransformRotate(_lab.transform, M_PI_2);
+    _lab.textAlignment = NSTextAlignmentCenter;
+    _lab.text = text;
+    _lab.textColor = [UIColor blackColor];
+    [self addSubview:_lab];
+}
+
+-(void)setTextFont:(CGFloat)textFont{
+    _textFont = textFont;
+    _lab.font = [UIFont systemFontOfSize:textFont];
+}
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

@@ -21,5 +21,9 @@
 @property(nonatomic,assign)float progresswidth;
 //是否动画
 @property(nonatomic,assign)BOOL animation;
+//圆环中的字
+@property(nonatomic,strong)NSString *text;
+//字的大小
+@property(nonatomic,assign)CGFloat textFont;
 
 @end
