@@ -53,6 +53,25 @@
     shape4.animation = YES;
     [self.view addSubview:shape4];
     
+    ZSShanpeLayer *shape5 = [[ZSShanpeLayer alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
+    shape5.center = shape4.center;
+    shape5.shapecolor = [UIColor blackColor];
+    shape5.progresscolor = [UIColor yellowColor];
+    shape5.progresswidth = 10;
+    shape5.progress = 0.87;
+    shape5.animation = YES;
+    [self.view addSubview:shape5];
+    
+    ZSShanpeLayer *shape6 = [[ZSShanpeLayer alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
+    shape6.center = shape4.center;
+    shape6.shapecolor = [UIColor blackColor];
+    shape6.progresscolor = [UIColor brownColor];
+    shape6.progresswidth = 10;
+    shape6.progress = 0.6;
+    shape6.animation = YES;
+    [self.view addSubview:shape6];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
