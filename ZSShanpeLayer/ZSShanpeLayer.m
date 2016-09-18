@@ -51,7 +51,6 @@
 }
 
 -(void)createShanpe{
-    //    _shapepath = [UIBezierPath bezierPathWithArcCenter:self.center radius:(self.bounds.size.width - _progresswidth) * 0.5 startAngle:0 endAngle:M_PI * 2 clockwise:YES];
     _shapepath = [UIBezierPath bezierPathWithOvalInRect:self.bounds];
     _shapelayer.strokeStart = 0.0f;
     _shapelayer.strokeEnd = 1.0f;
@@ -59,7 +58,6 @@
 }
 
 -(void)createProgress{
-    //    _progresspath = [UIBezierPath bezierPathWithArcCenter:self.center radius:(self.bounds.size.width - _progresswidth) * 0.5 startAngle:- M_PI_2 endAngle:(M_PI * 2) * _progress - M_PI_2 clockwise:YES];
     _progresspath = [UIBezierPath bezierPathWithOvalInRect:self.bounds];
     _progresslayer.strokeStart = 0.0f;
     _progresslayer.strokeEnd = _progress;
