@@ -4,6 +4,7 @@
 //
 //  Created by Tony on 16/8/29.
 //  Copyright © 2016年 Tony. All rights reserved.
+//  如果有更好的改进想法,请告诉我tonyshanm,如果喜欢给个star也是可以滴
 //
 
 #import "ZSShanpeLayer.h"

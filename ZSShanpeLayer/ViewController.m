@@ -18,7 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
     ZSShanpeLayer *shape = [[ZSShanpeLayer alloc]initWithFrame:CGRectMake(20, 50, 100, 100)];
     shape.shapecolor = [UIColor blackColor];
     shape.progresscolor = [UIColor yellowColor];
